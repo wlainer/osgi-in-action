@@ -11,7 +11,9 @@
 	<modules>
 		<module>fancyfoods-api</module>
 		<module>fancyfoods-web</module>
-	</modules>
+        <module>fancyfoods-impl</module>
+        <module>fancyfoods-business</module>
+    </modules>
 
 
 	<dependencyManagement>

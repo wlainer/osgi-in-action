@@ -4,7 +4,7 @@ public interface Food {
 
 	String getName();
 	
-	double gePrice();
+	double getPrice();
 	
 	int getQuantityInStock();
 
