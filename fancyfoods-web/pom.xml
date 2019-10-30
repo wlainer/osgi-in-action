@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>fancyfoods</artifactId>
+		<groupId>com.osgi</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>fancyfoods-web</artifactId>
+	<packaging>bundle</packaging>
+
+	<properties>
+		<osgi.spec.version>4.2.0</osgi.spec.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.enterprise</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+	<resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <excludes>
+                <exclude>*.properties</exclude>
+            </excludes>
+            <filtering>false</filtering>
+        </resource>
+    </resources>
+	
+		<plugins>
+			
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<_wab>src/main/webapp</_wab>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Web-ContextPath>/fancyfoods.web</Web-ContextPath>
+						<Private-Package>fancyfoods.web.*</Private-Package>
+						<Include-Resource>
+                            {maven-resources}, {maven-dependencies},
+                            resources=src/main/resources
+                        </Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
