@@ -2,18 +2,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>com.osgi</groupId>
 	<artifactId>fancyfoods</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<modules>
 		<module>fancyfoods-api</module>
 		<module>fancyfoods-web</module>
-        <module>fancyfoods-impl</module>
-        <module>fancyfoods-business</module>
-    </modules>
+		<module>fancyfoods-impl</module>
+		<module>fancyfoods-business</module>
+		<module>fancyfoods-datasource</module>
+		<module>fancyfoods-persistence</module>
+	</modules>
 
 
 	<dependencyManagement>
@@ -45,6 +47,12 @@
 				<artifactId>org.osgi.enterprise</artifactId>
 				<version>${osgi.spec.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>1.0.1.Final</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
