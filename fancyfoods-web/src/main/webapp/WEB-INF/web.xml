@@ -7,4 +7,12 @@
 		<servlet-name>SayHello</servlet-name>
 		<url-pattern>/SayHello</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>SayHelloJNDI</servlet-name>
+		<servlet-class>fancyfoods.web.SayHelloJNDI</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SayHelloJNDI</servlet-name>
+		<url-pattern>/SayHelloJNDI</url-pattern>
+	</servlet-mapping>
 </web-app>
